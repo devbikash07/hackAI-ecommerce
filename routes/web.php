@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Font;
 
 Route::get('/', function () {
-    return view('welcome');
+    $fonts = Font::all();
+
+    return view('welcome', compact('fonts'));
 });
 
 Route::get('/dashboard', function () {
